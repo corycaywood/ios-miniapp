@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### 2.1.0 (2020-09-03)
+
+**SDK**
+- **Feature:** Support telephone (`tel:`) hyperlinks from a mini app.
+
+**Sample App:**
+- **Feature:** User name, profile photo, and contact list can be configured in the settings screen.
+- **Fix:** Location permission callback was not triggered after user accepted/denied the permission.
+
 ### 2.0.0 (2020-08-07)
 
 **SDK**
