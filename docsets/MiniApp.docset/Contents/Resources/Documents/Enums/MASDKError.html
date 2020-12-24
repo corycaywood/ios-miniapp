@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MiniAppUserInfoDelegate Protocol Reference</title>
+    <title>MASDKError Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Protocol/MiniAppUserInfoDelegate" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Enum/MASDKError" class="dashAnchor"></a>
 
-    <a title="MiniAppUserInfoDelegate Protocol Reference"></a>
+    <a title="MASDKError Enumeration Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MiniApp Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MiniAppUserInfoDelegate Protocol Reference
+      MASDKError Enumeration Reference
     </p>
 
     <div class="content-wrapper">
@@ -182,16 +182,16 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MiniAppUserInfoDelegate</h1>
+            <h1>MASDKError</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MiniAppUserInfoDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MASDKError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MASDKError</span><span class="p">:</span> <span class="kt">LocalizedError</span></code></pre>
 
                 </div>
               </div>
-            <p>Public Protocol that will be used by the Mini App to communicate
-with the Native implementation for User profile related retrieval</p>
+            <p>Mini App SDK Error which is passed from the main MiniApp APIs.</p>
 
           </div>
         </section>
@@ -203,203 +203,314 @@ with the Native implementation for User profile related retrieval</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP03getC4Name17completionHandleryys6ResultOySSSgAA10MASDKErrorOGc_tF"></a>
-                    <a name="//apple_ref/swift/Method/getUserName(completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP03getC4Name17completionHandleryys6ResultOySSSgAA10MASDKErrorOGc_tF">getUserName(completionHandler:<wbr>)</a>
+                    <a name="/s:7MiniApp10MASDKErrorO11serverErroryACSi_SStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/serverError(code:message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO11serverErroryACSi_SStcACmF">serverError(code:<wbr>message:<wbr>)</a>
                     </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Interface that is used to retrieve the user name from the User Profile</p>
+                        <p>The server returned an error.</p>
 
                       </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">serverError</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>code</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>HTTP status code from the server</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error message returned by the server</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO15invalidURLErroryA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidURLError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO15invalidURLErroryA2CmF">invalidURLError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The URL was invalid the SDK tried to connect to the server.
+Probably you provided an invalid URL value to the Base URL setting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidURLError</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO07invalidB2IdyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidAppId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO07invalidB2IdyA2CmF">invalidAppId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The provided mini app ID was invalid. For example, the value cannot be an empty string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidAppId</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO19invalidResponseDatayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidResponseData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO19invalidResponseDatayA2CmF">invalidResponseData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The server provided an invalid response body.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidResponseData</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO17downloadingFailedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/downloadingFailed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO17downloadingFailedyA2CmF">downloadingFailed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The mini app failed to download.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">downloadingFailed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO18noPublishedVersionyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/noPublishedVersion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO18noPublishedVersionyA2CmF">noPublishedVersion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>There are no published versions for the provided mini app ID.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">noPublishedVersion</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO04miniB8NotFoundyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/miniAppNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO04miniB8NotFoundyA2CmF">miniAppNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The provided mini app ID was not found on the server.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">miniAppNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7MiniApp10MASDKErrorO12unknownErroryACSS_SiSStcACmF"></a>
+                    <a name="//apple_ref/swift/Element/unknownError(domain:code:description:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7MiniApp10MASDKErrorO12unknownErroryACSS_SiSStcACmF">unknownError(domain:<wbr>code:<wbr>description:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An unexpected error occured.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unknownError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>domain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The domain from the original NSError.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The code from the original NSError.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>description</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The description from the original NSError</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Foundation14LocalizedErrorP16errorDescriptionSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/errorDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Foundation14LocalizedErrorP16errorDescriptionSSSgvp">errorDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
                         
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getUserName</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?,</span> <span class="kt"><a href="../Enums/MASDKError.html">MASDKError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP15getProfilePhoto17completionHandleryys6ResultOySSSgAA10MASDKErrorOGc_tF"></a>
-                    <a name="//apple_ref/swift/Method/getProfilePhoto(completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP15getProfilePhoto17completionHandleryys6ResultOySSSgAA10MASDKErrorOGc_tF">getProfilePhoto(completionHandler:<wbr>)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Interface that is used to retrieve the Image URI</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getProfilePhoto</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">?,</span> <span class="kt"><a href="../Enums/MASDKError.html">MASDKError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP03getC4NameSSSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getUserName()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP03getC4NameSSSgyF">getUserName()</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getUserName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP15getProfilePhotoSSSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getProfilePhoto()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP15getProfilePhotoSSSgyF">getProfilePhoto()</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getProfilePhoto</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP11getContactsSayAA9MAContactCGSgyF"></a>
-                    <a name="//apple_ref/swift/Method/getContacts()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP11getContactsSayAA9MAContactCGSgyF">getContacts()</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Interface that is used to retrieve the Contact list</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getContacts</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/MAContact.html">MAContact</a></span><span class="p">]?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7MiniApp0aB16UserInfoDelegateP14getAccessToken04miniB2Id17completionHandlerySS_ys6ResultOyAA07MATokenD0CAA26MASDKCustomPermissionErrorOGctF"></a>
-                    <a name="//apple_ref/swift/Method/getAccessToken(miniAppId:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7MiniApp0aB16UserInfoDelegateP14getAccessToken04miniB2Id17completionHandlerySS_ys6ResultOyAA07MATokenD0CAA26MASDKCustomPermissionErrorOGctF">getAccessToken(miniAppId:<wbr>completionHandler:<wbr>)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Interface that is used to retrieve the Token Info</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAccessToken</span><span class="p">(</span><span class="nv">miniAppId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/MATokenInfo.html">MATokenInfo</a></span><span class="p">,</span> <span class="kt"><a href="../Enums/MASDKCustomPermissionError.html">MASDKCustomPermissionError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorDescription</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
